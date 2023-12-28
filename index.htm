@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CASE Dashboard</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:300,400,700&display=swap" rel="stylesheet">
+  <script src="lib/three/build/three.min.js"></script>
+  <script src="lib/three/examples/js/controls/OrbitControls.js"></script>
+  <script src="lib/three/examples/js/loaders/OBJLoader.js"></script>
+  <script src="lib/three/examples/js/loaders/MTLLoader.js"></script>
+
+  <script src="lib/dat.gui.min.js"></script>
+  <script src="lib/r_utils3d.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <script src="lib/datatable.js"></script>
+
+  <!-- Script for Google API -->
+  <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script> -->
+
+</head>
+
+<body onload="setup();">
+  <div class="container-fluid menuItem">
+    <iframe src="menu.htm" name="iframe_a" width="100%" style="border:none;" title="Menu"></iframe>
+  </div>
+  <div id="flex-container" class=" content" align="center">
+
+    <!-------------------------  Canvas for 3D View  ---------------------------->
+    <div class="container-fluid">
+      <div class="row gx-4 mb-4">
+        <div class="col-8 mt-4">
+          <div class="card shadow">
+            <div class="card-header">3D View</div>
+            <div id="" class="p-4 card-body">
+              <canvas id="c"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-------------------------  Control Panel  ---------------------------->
+        <div class="col-4 mt-4">
+          <div class="row mb-4">
+            <div class= "col-6">
+            <div class="card shadow">
+              <div class="card-header">Visualization<br></div>
+              <div id="Canvas3DDIV" class="ContentStyle p-3 card-body">
+                <div id="showOccupancy"></div>
+                <div id="showProximity"></div>         
+                <div id="showAmbient"></div>    
+                <div id="SelectSensorID"></div>
+              </div>
+            </div>
+          </div>
+
+            <!-------------------------  Data Table DIV  ---------------------------->          
+            <div class="col-6">
+              <div class="card shadow">
+                <div class="card-header">Realtime Data</div>
+                  <div class="TableStyle p-3 card-body"><div id='RealTableDIV'></div></div>
+              </div>
+            </div>
+          </div>
+          <!-------------------------  Data Table DIV  ---------------------------->          
+          <div class="mb-4">
+            <div class="card shadow">
+              <div class="card-header">Data Records</div>
+                <div class="TableStyle p-3 card-body"><div id='GraphTableDIV'></div></div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-6">
+            <div class="card shadow">
+              <div class="card-header">Object Types</div>
+                <div class="TableStyle p-3 card-body"><div id="selectType"></div></div>
+            </div>
+          </div>
+          
+            <div class="col-6">
+              <div class="card shadow">
+                <div class="card-header">Data Table</div>
+                  <div class="TableStyle p-3 card-body"><div id="DataTableDIV"></div></div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    </div>
+      <!--------------------------- Contact ----------------------------->
+    </div>
+      <div class="jumbotron footer">
+      <div class="row gy-2 gx-3 mb-5">
+        <div class="col-8"></div>
+        <div class="col-4 contact mt-5">
+          <div class="contact-header mb-3">Contact Us</div>
+          <div class="contact-content"><strong>Center for Architecture Science and Ecology (CASE)</strong><br>
+            Jihoon Chung, <i>PhD Candidate</i><br>Email: chungj11@rpi.edu
+          <br>Address: 86 34th St. Suite D601, Brooklyn, NY 11232</div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mt-2">
+      <div class="copyright">Copyright © Jihoon Chung. All rights reserved.</div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+<script src="./src/globals.js"></script>
+<script src="./src/script.js"></script>
+
+</html>
